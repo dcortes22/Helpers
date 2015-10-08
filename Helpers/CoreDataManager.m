@@ -22,9 +22,17 @@
     static dispatch_once_t pred = 0;
     __strong static id _sharedObject = nil;
     dispatch_once(&pred, ^{
-        _sharedObject = [[self alloc] init];
+        _sharedObject = [[self alloc] initInternal];
     });
     return _sharedObject;
+}
+
+- (instancetype) initInternal {
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
 }
 
 #pragma mark - Core Data Stack

@@ -16,6 +16,10 @@
 @property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 + (instancetype)sharedInstance;
+
+- (instancetype)init __attribute__((unavailable("Use [CoreDataManager sharedInstance] instead")));
+- (instancetype)new __attribute__((unavailable("Use [CoreDataManager sharedInstance] instead")));
+
 - (void)setDataBaseName:(NSString *)database;
 - (void)initContext;
 - (NSManagedObjectContext *)contextForThread;
